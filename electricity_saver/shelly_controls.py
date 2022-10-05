@@ -1,6 +1,7 @@
 import requests
+import csv
 
-def relays_onoff(hour_now: str, hourprice: float, lowest_h: list):
+def relays_onoff(day: str, hour_now: str, hourprice: float, hourprices_asc: list):
 
     shelly_ip = "192.168.20.67" #your Shelly pro 4PM IP-address.
 
@@ -10,14 +11,14 @@ def relays_onoff(hour_now: str, hourprice: float, lowest_h: list):
 
     hours_on = 6  #how many hours relay one (output 1) needs to be ON (using lowest tariff's / day)
 
-    active_hours = dict(list(lowest_h.items())[:hours_on])  #reduce full 24h price list to wanted nr. of hours only    
+    active_hours = dict(list(hourprices_asc.items())[:hours_on])  #reduce full 24h price list to wanted nr. of hours only    
 
-    #relay 1 is automatically activated based on lowest tariff hours defined above
+    #relay 1 is automatically activated based on lowest tariff hours defined above  
     if hour_now in active_hours:
         relay1 = requests.get(f"http://{shelly_ip}/relay/0?turn=on")
     else:
         relay1 = requests.get(f"http://{shelly_ip}/relay/0?turn=off")
-
+  
     #relay 2 goes OFF when hourly price is more than "limit_tariff_2"/Mwh (Excl. VAT)
     if hourprice > limit_tariff_2:
         relay2 = requests.get(f"http://{shelly_ip}/relay/1?turn=off")
@@ -39,9 +40,19 @@ def relays_onoff(hour_now: str, hourprice: float, lowest_h: list):
     #saving relays on/off status in to variables r1, r2, r3, r4
     r1, r2, r3, r4 = (relay1.json()["ison"]), (relay2.json()["ison"]), (relay3.json()["ison"]), (relay4.json()["ison"])  
    
+   # saving logs in .csv file (date, time, hour, relay status)
+    log_data = [day, hour_now, r1, r2, r3, r4]
+
+    with open("logs.csv", "a") as file:
+        writer = csv.writer(file)
+        writer.writerow(log_data)
+
     print(f"Relay 1 is ON: {r1}") 
     print(f"Relay 2 is ON: {r2}")
     print(f"Relay 3 is ON: {r3}")
-    print(f"Relay 4 is ON: {r4}") 
+    print(f"Relay 4 is ON: {r4}")
+    print() 
  
- 
+
+
+    

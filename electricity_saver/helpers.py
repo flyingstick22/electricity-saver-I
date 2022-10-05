@@ -1,10 +1,8 @@
 import re
 
 def filter_raw_data(raw_data:str):
-    prices = re.findall(r"<price.amount>\d+.\d+", raw_data)
-    joined2 = " ".join(prices)
-    filtered_prices = re.findall(r"\d+.\d+", joined2)
-    return filtered_prices
+    prices = re.findall(r"<price.amount>(.*?)</price.amount>", raw_data)
+    return prices
 
 def max_price(filtered_prices):
     max_price = 0

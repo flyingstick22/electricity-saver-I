@@ -23,7 +23,7 @@ def application():
     print(f"{day} Electricity prices today between: {min_price(clean_data)}...{max_price(clean_data)} €/MWh from {hour_now} o'clock onwards: {hourprices[hour_now]} €/MWh")
     
     # After prices known and sorted. Relay controls made with relays_onoff function
-    relays_onoff(hour_now, float(hourprices[hour_now]), hourprices_asc)     
+    relays_onoff(day, hour_now, float(hourprices[hour_now]), hourprices_asc)     
 
 def get_prices():
 
