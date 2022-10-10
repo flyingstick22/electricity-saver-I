@@ -4,7 +4,7 @@ import csv
 
 def relays_onoff(day: str, hour_now: str, hourprice: float, hourprices_asc: list):
 
-    shelly_ip = "192.168.20.67" #your Shelly pro 4PM IP-address.
+    shelly_ip = "192.168.1.xx" #your Shelly pro 4PM IP-address.
 
     # Output one
     hours_on = 6  #how many hours output one should be ON (using lowest tariff's / day)

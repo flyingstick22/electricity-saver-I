@@ -1,14 +1,11 @@
 import time
-import os
 import pandas as pd
 from entsoe import EntsoeRawClient
 from datetime import datetime, timedelta
-from dotenv import load_dotenv
 from datetime import datetime
 from helpers import filter_raw_data, create_hourly_prices, min_price, max_price, sort_lowest_hours
 from shelly_controls import relays_onoff
 
-load_dotenv()
 
 def application():
 
@@ -30,8 +27,7 @@ def get_prices():
     country = "FI"              #country code
     tz = "Europe/Helsinki"      #time zone
     
-    API_KEY = os.getenv("ENTSO_API_KEY")
-    client = EntsoeRawClient(API_KEY)   
+    client = EntsoeRawClient("add_your_own_API_key_here")   #add your API key between " "   
 
     start_date_yyyymmdd = (datetime.today() + timedelta(days=1)).strftime('%Y%m%d')
     end_date_yyyymmdd = start_date_yyyymmdd
