@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 import csv
 
 def relays_onoff(day: str, hour_now: str, hourprice: float, hourprices_asc: list):
@@ -42,7 +43,8 @@ def relays_onoff(day: str, hour_now: str, hourprice: float, hourprices_asc: list
     r1, r2, r3, r4 = (relay1.json()["ison"]), (relay2.json()["ison"]), (relay3.json()["ison"]), (relay4.json()["ison"])  
    
    # saving logs in .csv file (day, hour, relay status) for future use
-    log_data = [day, hour_now, r1, r2, r3, r4]
+    yyyymmdd = datetime.today().strftime('%d-%m-%Y')
+    log_data = [yyyymmdd, hour_now, hourprice, hours_on, limit_tariff_2, limit_tariff_3, limit_tariff_4,  r1, r2, r3, r4]
 
     with open("logs.csv", "a") as file:
         writer = csv.writer(file)
