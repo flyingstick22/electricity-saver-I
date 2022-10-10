@@ -42,7 +42,7 @@ def relays_onoff(day: str, hour_now: str, hourprice: float, hourprices_asc: list
     #saving relays on/off status in to variables r1, r2, r3, r4
     r1, r2, r3, r4 = (relay1.json()["ison"]), (relay2.json()["ison"]), (relay3.json()["ison"]), (relay4.json()["ison"])  
    
-   # saving logs in .csv file (day, hour, relay status) for future use
+   # saving logs in .csv file for future use
     yyyymmdd = datetime.today().strftime('%d-%m-%Y')
     log_data = [yyyymmdd, hour_now, hourprice, hours_on, limit_tariff_2, limit_tariff_3, limit_tariff_4,  r1, r2, r3, r4]
 
