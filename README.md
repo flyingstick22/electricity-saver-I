@@ -45,7 +45,7 @@ Some modifications are needed before this thing works:
 
 ## Run the code
 
-open the terminal/command prompt and navigate to project folder (cd your_path/electricity_saver). As soon as your are in the right folder execute the main.py script by writing (in terminal
+open the terminal/command prompt and navigate to project folder (cd your_path/electricity_saver). As soon as your are in the right folder execute the main.py script by writing (in terminal)
 
         python main.py
 
@@ -71,7 +71,7 @@ You can stop the programm by pressing ctrl + c
 
 ## Summary
 
-The whole project is in "alpha" phase and basics work as planned. There are lot of room for improvements (e.g. error handling and pure code improvements) and one of possible next step is cloud deployment and code modifications so, that virtual machine would handle relay controls via Shelly's cloud API. 
+The whole project is in "alpha" phase and basics work as planned. There are lot of room for improvements (e.g. error handling and pure code improvements) and one possible next step is cloud deployment and code modifications so, that virtual machine would handle relay controls via Shelly's cloud API.
 
 Happy scripting!
 

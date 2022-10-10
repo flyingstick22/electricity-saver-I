@@ -3,7 +3,7 @@ import time
 from day_ahead_prices import application
 
 def main():
-
+    
     print("\nProgramm running...(exit ctrl+C)\n")
     application()   # runs app function once at startup. Afterwards once per hour  
     
