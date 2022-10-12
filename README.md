@@ -19,7 +19,9 @@ All day-ahead prices are coming from [ENTSO-E transparency platform](https://tra
 
 ## The beginning
 
-Shelly relay needs to be installed first. In most countries 230 V installation belongs to professional so follow your country rules here. As soon as Shelly is up and running connect the relay to your home router with Ethernet cable or using WiFi. You'll also need a computer that can run Python scripts. It can be, for example, Rasperry PI, desktop PC or a normal laptop. Important is that computer is operating in the same home network with Shelly. You have to also install to your computer Python and following packages; panda, schedule, entsoe-py.
+Shelly relay needs to be installed first. In most countries 230 V installation belongs to professional so follow your country rules here. As soon as Shelly is up and running connect the relay to your home network with Ethernet cable or using WiFi. You'll also need a computer with Python plus following packages; panda, schedule, entsoe-py. 
+
+<img src="/images/concept.jpg">
 
 ## Code modifications
 
