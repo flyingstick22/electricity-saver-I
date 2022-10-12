@@ -21,7 +21,7 @@ All day-ahead prices are coming from [ENTSO-E transparency platform](https://tra
 
 Shelly relay needs to be installed first. In most countries 230 V installation belongs to professional so follow your country rules here. As soon as Shelly is up and running connect the relay to your home network with Ethernet cable or using WiFi. You'll also need a computer with Python plus following packages; panda, schedule, entsoe-py. 
 
-<img src="/images/concept.jpg">
+<img src="/images/concept.jpeg">
 
 ## Code modifications
 
