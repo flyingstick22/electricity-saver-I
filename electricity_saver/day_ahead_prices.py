@@ -28,8 +28,6 @@ def get_prices():
     tz = "Europe/Helsinki"      #time zone
     
     client = EntsoeRawClient("add_your_own_entsoe_api_key_here")   #add your API key between " "   
-  #  client = EntsoeRawClient("your_own_API_key_here")   #add your API key between " "   
-
 
     start_date_yyyymmdd = (datetime.today() + timedelta(days=1)).strftime('%Y%m%d')
     end_date_yyyymmdd = start_date_yyyymmdd
