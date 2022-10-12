@@ -1,8 +1,9 @@
 # Control your home electrical loads based on day-ahead electricity prices
-The aim of this small Python project is to enable load control with Shelly relay based on hourly electricity prices (in Europe) and help people to cope with ongoing energy crisis. This project requires small engineering skillset but no prior experience about programming.
 
 ## Intro
+The aim of this small Python project is to help Europeans to cope with ongoing energy crisis. Electricity prices for the next day are known day before due to traiding concept between electricity buyers and sellers. So called electricity "spot price" is calculated for each hour based on production and consumption bids and this gives great opportunity for optimization. This project requires basic knowledge in python and is meant for other smart home enthusiasts out there.
 
+## Concept
 The system uses simple python scripts to control [Shelly pro 4PM](https://shelly.cloud/knowledge-base/devices/shelly-pro-4pm/) relay. The relay has four 230 V outputs and each output is activated or deactivated based on hourly electricity price. Shelly relays are widely available in Europe and they do have open API and good documentation for personal projects like this.
 
 The system default values are as follows (you can change all these values in *shelly_controls.py* for your liking):
@@ -18,7 +19,7 @@ All day-ahead prices are coming from [ENTSO-E transparency platform](https://tra
 
 ## The beginning
 
-Shelly relay needs to be installed first. In most countries 230 V installation belongs to professional so follow your country rules here. As soon as Shelly is up and running connect the relay to your home router with Ethernet cable or using WiFi. You'll also need a computer (python installed) that can run those scripts. It can be, for example, Rasperry PI, desktop PC or normal laptop. Important is that computer is operating in the same home network with Shelly.
+Shelly relay needs to be installed first. In most countries 230 V installation belongs to professional so follow your country rules here. As soon as Shelly is up and running connect the relay to your home router with Ethernet cable or using WiFi. You'll also need a computer that can run those scripts. It can be, for example, Rasperry PI, desktop PC or normal laptop. Important is that computer is operating in the same home network with Shelly. You have to also install Python and following packages; panda, schedule, entsoe-py.
 
 ## Code modifications
 
@@ -28,7 +29,7 @@ Some modifications are needed before this thing works:
 
 * In *shelly_controls.py* --> change IP to your shelly IP-address
 
-    ````  shelly_ip = "192.168.20.67"  ````
+    ````  shelly_ip = "192.168.1.xx"  ````
 
     in this file you can also set price limits for outputs two, three and four and set duration (hours) for output one. Look comments in the code for more details.
 
@@ -43,7 +44,7 @@ Some modifications are needed before this thing works:
 
 * Save modified files.
 
-## Run the code
+## Run
 
 open the terminal/command prompt and navigate to project folder (cd your_path/electricity_saver). As soon as your are in the right folder execute the main.py script by writing (in terminal)
 
@@ -65,7 +66,7 @@ if you do not see any prices or relay info (e.g. you get error about connectivit
 4. No Internet for some reason (check router, check computer)
 
 
-## Stop the code
+## Quit
 
 You can stop the programm by pressing ctrl + c
 
