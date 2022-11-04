@@ -1,4 +1,5 @@
 # Control your home electrical loads based on day-ahead electricity prices
+test
 
 ## Intro
 The aim of this small Python project is to help Europeans to cope with ongoing energy crisis. This project requires basic knowledge in python and is meant for other smart home enthusiasts out there.
